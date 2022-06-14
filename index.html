@@ -12,28 +12,14 @@
     <link rel="shortcut icon" href="/assets\favicon.ico" type="image/x-icon">
 </head>
 <body>
-    <div class="container">
-        <form onsubmit="sendEmail(); reset(); return false;">
-            <h3>GET IN TOUCH</h3>
-            <input type="text" id="name" placeholder="Your name" required>
-            <input type="text" id="email" placeholder="Your e-mail" required>
-            <textarea id="message" rows="4" placeholder="How can we help you?"></textarea>
-            <button type="submit">Send</button>
-        </form>
-    </div>
-    <script> src="https://smtpjs.com/v3/smtp.js"</script>
-    <script>
-        function sendEmail(){
-            Email.send({
-                SecureToken : "40140c74-bb33-4c11-ac75-4017b5a386f2",
-                To : 'herschelleon@gmail.com',
-                From : "document.getElementById('email').value",
-                Subject : "New Contact Form Enquiry",
-                Body : "Name: " + document.getElementById('name').value + "\n\n" + "<br> Email: " + document.getElementById('email').value + "\n\n" + "<br> Message: " + document.getElementById('message').value
-}).then(
-  message => alert(message)
-);
-        }
-    </script>
+    <form action="https://formsubmit.co/herschelleon@gmail.com" method="POST">
+        <h3>GET IN TOUCH</h3>
+        <input type="hidden" name="_subject" value="New Contact Mail!">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="text" id="name" placeholder="Your name" required>
+        <input type="text" id="email" placeholder="Your e-mail" required>
+        <textarea id="message" rows="4" placeholder="How can we help you?"></textarea>
+        <button type="submit">Send</button>
+    </form>
 </body>
 </html>
