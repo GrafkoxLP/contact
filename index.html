@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Grafkox | Contact">
+	<meta property="og:description" content="Contact us, if you have any questions or ideas.">
+	<meta property="og:image" content="/assets\Logo.png">
+    <title>Grafkox | Contact</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="/assets\favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <form onsubmit="sendEmail(); reset(); return false;">
+            <h3>GET IN TOUCH</h3>
+            <input type="text" id="name" placeholder="Your name" required>
+            <input type="text" id="email" placeholder="Your e-mail" required>
+            <textarea id="message" rows="4" placeholder="How can we help you?"></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </div>
+    <script> src="https://smtpjs.com/v3/smtp.js"</script>
+    <script>
+        function sendEmail(){
+            Email.send({
+                SecureToken : "e5022cb8-004b-41bb-b1a9-00e668cd39c5",
+                To : 'herschelleon@gmail.com',
+                From : "document.getElementById('email').value",
+                Subject : "New Contact Form Enquiry",
+                Body : "Name: " + document.getElementById('name').value + "\n\n" + "<br> Email: " + document.getElementById('email').value + "\n\n" + "<br> Message: " + document.getElementById('message').value
+}).then(
+  message => alert(message)
+);
+        }
+    </script>
+</body>
+</html>
